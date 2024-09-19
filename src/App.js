@@ -4,6 +4,9 @@ import Header from "./components/Header.js";
 import WelcomWorldPage from "./components/WelcomeWorld.js";
 import CreateGamePage from "./components/CreatePage.js";
 import GameCatalogPage from "./components/GameCatalogPage.js";
+import LogInPage from "./components/LogIn.js";
+import RegisterPage from "./components/Register.js";
+import ErrorPage from "./components/ErrorPage.js";
 
 
 function App() {
@@ -11,8 +14,10 @@ function App() {
 
   const routes = {
     '/home': <WelcomWorldPage />,
-    '/games': <CreateGamePage />,
     '/create-game': <GameCatalogPage />,
+    '/games': <CreateGamePage />,
+    '/login': <LogInPage />,
+    '/register': <RegisterPage />,
   };
 
   const navigationChngeHandler = (path) => {
@@ -27,7 +32,7 @@ function App() {
       <main id="main-content">
       {routes[page] 
           ? routes[page]
-          : <h2>No Page Found!</h2>
+          : <ErrorPage />
         }
       </main>
     </div>

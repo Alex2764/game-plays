@@ -1,4 +1,15 @@
+import { useState, useEffect } from 'react'
+
 const GameCatalogPage = () => {
+
+    const [games, setGames] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3030/data/games?sortBy=_createdOn%20desc')
+        .then(res => res.json())
+        .then(gameData => setGames(gameData));
+    }, []);
+
     return (
         <section id="catalog-page">
             <h1>All Games</h1>

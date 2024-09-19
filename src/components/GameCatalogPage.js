@@ -1,4 +1,4 @@
-const CatalogPage = () => {
+const GameCatalogPage = () => {
     return (
         <section id="catalog-page">
             <h1>All Games</h1>
@@ -34,4 +34,4 @@ const CatalogPage = () => {
     );
 };
 
-export default CatalogPage;
+export default GameCatalogPage;

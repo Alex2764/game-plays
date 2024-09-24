@@ -23,7 +23,7 @@ function App() {
     let argument = pathNames[2];
 
     const routes = {
-      'home': <WelcomWorldPage />,
+      'home': <WelcomWorldPage navigationChngeHandler={navigationChngeHandler} />,
       'games': <GameCatalogPage navigationChngeHandler={navigationChngeHandler} />,
       'create-game': <CreateGamePage />,
       'login': <LogInPage />,

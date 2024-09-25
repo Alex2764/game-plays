@@ -1,10 +1,16 @@
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
+
 const LogInPage = ({
     history,
 }) => {
 
+    let historyHook = useHistory();
+
     const onFormSubmit = (e) => {
         e.preventDefault();
-        history.push('/games')
+        historyHook.push('/games')
+        // history.push('/games')
     }
 
 

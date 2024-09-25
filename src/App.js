@@ -16,10 +16,11 @@ function App() {
       <main id="main-content">
         <Switch>
           <Route path="/" exact component={WelcomWorldPage} />
-          <Route path="/games" component={GameCatalogPage} />
+          <Route path="/games" exact component={GameCatalogPage} />
           <Route path="/create-game" component={CreateGamePage} />
           <Route path="/login" component={LogInPage} />
           <Route path="/register" component={RegisterPage} />
+          <Route path="/games/:gameId" component={GameDetail} />
         </Switch>
       </main>
     </div>

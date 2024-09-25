@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import { Redirect, Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 import Header from "./components/Header.js";
 import WelcomWorldPage from "./components/WelcomeWorld.js";
@@ -21,6 +21,15 @@ function App() {
           <Route path="/login" component={LogInPage} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/games/:gameId" component={GameDetail} />
+          <Route path="/custom">
+            <h2>Custom Page</h2>
+            <p>njsfnisdfjkdnf</p>
+          </Route>
+          <Route path="/logout" render={(props) => {
+            console.log('Logget Out!!!');
+            // props.history.push()
+            return <Redirect to="/" />
+          }} />
         </Switch>
       </main>
     </div>

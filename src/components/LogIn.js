@@ -2,7 +2,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const LogInPage = ({
-    history,
+    // history,
 }) => {
 
     let historyHook = useHistory();

@@ -4,7 +4,6 @@ import * as gameServices from '../services/gameServices.js';
 
 const GameDetail = ({
     match,
-    history,
 }) => {
     const [game, setGame] = useState({});
 

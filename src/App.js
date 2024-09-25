@@ -20,7 +20,11 @@ function App() {
     let pathNames = path.split('/');
 
     let rootPath = pathNames[1];
+    // console.log(rootPath);
+    
     let argument = pathNames[2];
+    //! console.log(argument); Undifined
+     
 
     const routes = {
       'home': <WelcomWorldPage navigationChngeHandler={navigationChngeHandler} />,

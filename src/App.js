@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 import Header from "./components/Header.js";
 import WelcomWorldPage from "./components/WelcomeWorld.js";
@@ -10,39 +10,17 @@ import RegisterPage from "./components/Register.js";
 import ErrorPage from "./components/ErrorPage.js";
 
 function App() {
-  const [page, setPage] = useState('/home');
-  
-  const navigationChngeHandler = (path) => {
-    setPage(path);
-  };
-
-  const router = (path) => {
-    let pathNames = path.split('/');
-
-    let rootPath = pathNames[1];
-    // console.log(rootPath);
-    
-    let argument = pathNames[2];
-    //! console.log(argument); Undifined
-     
-
-    const routes = {
-      'home': <WelcomWorldPage navigationChngeHandler={navigationChngeHandler} />,
-      'games': <GameCatalogPage navigationChngeHandler={navigationChngeHandler} />,
-      'create-game': <CreateGamePage />,
-      'login': <LogInPage />,
-      'register': <RegisterPage />,
-      'details': <GameDetail id={argument} />,
-    };
-
-    return routes[rootPath];
-  };
-
   return (
     <div id="box">
-      <Header navigationChngeHandler={navigationChngeHandler} />
+      <Header />
       <main id="main-content">
-        { router(page) || <ErrorPage /> }
+        <Switch>
+          <Route path="/" exact component={WelcomWorldPage} />
+          <Route path="/games" component={GameCatalogPage} />
+          <Route path="/create-game" component={CreateGamePage} />
+          <Route path="/login" component={LogInPage} />
+          <Route path="/register" component={RegisterPage} />
+        </Switch>
       </main>
     </div>
   );

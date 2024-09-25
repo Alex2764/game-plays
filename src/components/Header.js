@@ -1,19 +1,28 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, NavLink } from "react-router-dom/cjs/react-router-dom.min";
+
+import './Header.css'
 
 const Header = () => {
 
+    // let activeLimkStyles = {
+    //     color: 'red',
+    //     fontWeight: 'bold',
+    //     textDecoration: 'underline',
+    // }
+
+    // activeStyle{} direct into element
     return (
         <header>
-            <h1><Link className="home" to="/">GamesPlay</Link></h1>
+            <h1><NavLink className="home" to="/">GamesPlay</NavLink></h1>
             <nav>
-                <Link to="/games">All games</Link>
+                <NavLink activeClassName="active-navigation-link" to="/games">All games</NavLink>
                 <div id="user">
-                    <Link to="/create-game">Create Game</Link>
-                    <Link to="/logout">Logout</Link>
+                    <NavLink activeClassName="active-navigation-link" to="/create-game">Create Game</NavLink>
+                    <NavLink activeClassName="active-navigation-link" to="/logout">Logout</NavLink>
                 </div>
                 <div id="guest">
-                    <Link to="/login">Login</Link>
-                    <Link to="/register">Register</Link>
+                    <NavLink activeClassName="active-navigation-link" to="/login">Login</NavLink>
+                    <NavLink activeClassName="active-navigation-link" to="/register">Register</NavLink>
                 </div>
             </nav>
         </header>
